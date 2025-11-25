@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First React</title>
+    <style>
+        .title {
+            color: skyblue;
+        }
+    </style>
 </head>
 <body>
     <div id="root">
@@ -18,16 +23,29 @@
         const rootTag = ReactDOM.createRoot(document.getElementById('root'));
         function Welcome(params) {
             console.log(params);
-            return <h1>Bonjour {params.nom} </h1>
+            return <h1 className="title">Bonjour {params.nom} </h1>
         }
 
-        class Salutation extends React.Component {
-            render(){
-                return <h1>Bonjour {this.props.nom} </h1>
-            }
+        function calculate() {
+            const span = document.getElementById("compteur");
+            const number = parseInt(span.textContent) + 1;
+            span.textContent = number;
+            
+            
+            
         }
 
-        rootTag.render(<Salutation nom="Mansour"/>)
+        function Count() {
+            return (
+                <div>
+                    <span id="compteur">0</span>
+                    <button onClick={() => {calculate()}}>Click Me</button>    
+                </div>
+
+            )
+        }
+
+        rootTag.render(<Count />)
     </script>
 
     
