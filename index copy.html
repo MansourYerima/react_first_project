@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First React</title>
+</head>
+<body>
+    <div id="root">
+        Hello World !
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Ancien code... -->
+    <script>
+        const rootTag = ReactDOM.createRoot(document.getElementById('root'));
+        const first_elt = React.createElement("ul", null, [
+            React.createElement("li", {key:0}, "Acceuil"),
+            React.createElement("li", {key:1}, "Services"),
+            React.createElement("li", {key:2}, "Contacts")
+        ]);
+    </script>
+
+    <!-- Code avec Babel -->
+    <script type="text/babel">
+        const elt_jsx = (
+            <ol>
+                <li>Acceuil</li> 
+                <li>Services</li>
+                <li>Contacts</li>   
+            </ol>
+        );
+
+        rootTag.render(elt_jsx);
+    </script>
+
+    <!-- Creation des composants -->
+
+</body>
+</html>

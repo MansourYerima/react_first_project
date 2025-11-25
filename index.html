@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First React</title>
+</head>
+<body>
+    <div id="root">
+        Hello World !
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Creation des composants -->
+    <script type="text/babel">
+        const rootTag = ReactDOM.createRoot(document.getElementById('root'));
+        function Welcome(params) {
+            console.log(params);
+            return <h1>Bonjour {params.nom} </h1>
+        }
+
+        class Salutation extends React.Component {
+            render(){
+                return <h1>Bonjour {this.props.nom} </h1>
+            }
+        }
+
+        rootTag.render(<Salutation nom="Mansour"/>)
+    </script>
+
+    
+</body>
+</html>
